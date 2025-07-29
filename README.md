@@ -112,6 +112,25 @@ Use the MCP Inspector for testing:
 ```bash
 uv run mcp-inspector src/main.py
 ```
+### 🔧 客戶端配置示例 對於支持HTTP傳輸的MCP客戶端：
+```json
+{
+  "transport": "http",
+  "url": "http://192.227.177.133:3088/mcp",
+  "method": "POST"
+}
+### 🔧 對於Claude Desktop等客戶端
+```json
+{
+  "mcpServers": {
+    "spec-driven-dev": {
+      "transport": "http",
+      "url": "http://192.227.177.133:3088/mcp"
+    }
+  }
+}
+```
+
 
 ## 📄 License
 

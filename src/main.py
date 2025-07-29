@@ -3,7 +3,7 @@
 
 import asyncio
 import sys
-from .server import create_server
+from server import create_server
 
 
 async def main() -> None:

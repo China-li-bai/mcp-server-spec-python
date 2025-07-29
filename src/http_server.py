@@ -9,7 +9,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 import uvicorn
 
-from .server import create_server
+from server import create_server
 
 
 # Create FastAPI app
@@ -123,7 +123,7 @@ async def health_check() -> Dict[str, str]:
 
 
 @app.get("/")
-async def root() -> Dict[str, str]:
+async def root() -> Dict[str, Any]:
     """Root endpoint with basic information."""
     return {
         "name": "Spec-Driven Development MCP Server",
@@ -146,7 +146,7 @@ def main() -> None:
     
     try:
         uvicorn.run(
-            "src.http_server:app",
+            "http_server:app",
             host=host,
             port=port,
             reload=False,

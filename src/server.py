@@ -2,7 +2,7 @@
 
 from typing import List
 from mcp.server.fastmcp import FastMCP
-from mcp.types import TextContent, UserMessage
+from mcp.types import TextContent, PromptMessage
 
 
 def create_server() -> FastMCP:
@@ -15,7 +15,7 @@ def create_server() -> FastMCP:
     )
     
     @mcp.prompt()
-    def generate_requirements(requirements: str) -> List[UserMessage]:
+    def generate_requirements(requirements: str) -> List[PromptMessage]:
         """Generate requirements.md using EARS format.
         
         Args:
@@ -27,7 +27,7 @@ def create_server() -> FastMCP:
             List of messages for the LLM to generate structured requirements document.
         """
         return [
-            UserMessage(
+            PromptMessage(
                 content=TextContent(
                     type="text",
                     text=f"""Based on below requirements, generate requirements.md using EARS format in 'specs' folder:
@@ -38,14 +38,14 @@ def create_server() -> FastMCP:
         ]
     
     @mcp.prompt()
-    def generate_design_from_requirements() -> List[UserMessage]:
+    def generate_design_from_requirements() -> List[PromptMessage]:
         """Generate design.md from requirements.md.
         
         Returns:
             List of messages for the LLM to generate design document from requirements.
         """
         return [
-            UserMessage(
+            PromptMessage(
                 content=TextContent(
                     type="text",
                     text="Based on specs/requirements.md, generate specs/design.md"
@@ -54,14 +54,14 @@ def create_server() -> FastMCP:
         ]
     
     @mcp.prompt()
-    def generate_code_from_design() -> List[UserMessage]:
+    def generate_code_from_design() -> List[PromptMessage]:
         """Generate code from design.md.
         
         Returns:
             List of messages for the LLM to generate implementation code from design.
         """
         return [
-            UserMessage(
+            PromptMessage(
                 content=TextContent(
                     type="text",
                     text="Based on specs/design.md, generate code on the root folder"
