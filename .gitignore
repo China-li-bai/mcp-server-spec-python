@@ -155,33 +155,25 @@ cython_debug/
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be added to the global gitignore or merged into this project gitignore.  For a PyCharm
-#  project, it is recommended to include the following files in version control:
-#  - .idea/inspectionProfiles/profiles_settings.xml
-#  - .idea/inspectionProfiles/Project_Default.xml
-#  - .idea/misc.xml
-#  - .idea/modules.xml
-#  - .idea/shelf
-#  - .idea/workspace.xml
-#  - .idea/tasks.xml
-#  - .idea/gradle.xml
-#  - .idea/assetWizardSettings.xml
-#  - .idea/dictionaries
-#  - .idea/libraries
-# Android studio 3.1+ serialized cache file
-.idea/caches/build_file_checksums.ser
+#  project, it is recommended to include the following files:
+#   .idea/
+#   *.iml
+#   *.ipr
 
-.idea/
+# VS Code
 .vscode/
 
-# OS generated files
+# macOS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-# Project specific
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Specs folder (generated content)
 specs/
+
+# Logs
 *.log
+logs/
